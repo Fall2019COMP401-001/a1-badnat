@@ -34,7 +34,7 @@ public class A1Novice {
 		
 		for(int i = 0; i < totals.length; i++) { 
 			
-			System.out.println(names[i][0].charAt(0) + ". " + names[i][1] + ": " + totals[i]);
+			System.out.println(names[i][0].charAt(0) + ". " + names[i][1] + ": " + String.format("%.2f", totals[i]));
 		}
 		
 	}
