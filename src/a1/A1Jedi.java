@@ -38,11 +38,18 @@ int count = scan.nextInt();
 			names[i][1] = scan.next();
 			int countI = scan.nextInt();
 			
+			int[] tempOrder = new int[items.length];
+			
 			for(int j = 0; j < countI; j++) {
 				 int factor = scan.nextInt();
 				 String item = scan.next();
-				 amountBought[findPrice(items, item)] +=  factor;
-				 amountCust[findPrice(items, item)] += 1;
+				 int itemLoc = findPrice(items, item);
+				 amountBought[itemLoc] += factor;
+				 tempOrder[itemLoc] = 1;
+			}
+			
+			for(int k = 0; k < tempOrder.length; k++) {
+				amountCust[k] += tempOrder[k];
 			}
 		}
 		
